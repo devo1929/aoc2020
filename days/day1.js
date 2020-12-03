@@ -1,5 +1,4 @@
-const FileReader = require('../classes/file-reader');
-const fileReader = new FileReader();
+const fileReader = require('../classes/file-reader');
 
 partOne();
 partTwo();

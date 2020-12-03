@@ -12,4 +12,4 @@ class FileReader {
     }
 }
 
-module.exports = FileReader;
+module.exports = new FileReader();
