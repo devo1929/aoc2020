@@ -4,7 +4,7 @@ const path = require('path');
 
 class FileReader {
     readFileLines(path) {
-        return fs.readFileSync(path).toString().split('\n').map(s => s.trim()).filter(s => s);
+        return fs.readFileSync(path).toString().trim().split('\n').map(s => s.trim());
     }
 
     readInputFile(filename) {
