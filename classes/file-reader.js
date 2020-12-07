@@ -3,12 +3,17 @@ const path = require('path');
 
 
 class FileReader {
-    readFileLines(path) {
-        return fs.readFileSync(path).toString().trim().split('\n').map(s => s.trim());
+    readFileLines(path, split = true) {
+        const contents = fs.readFileSync(path).toString().trim();
+        if(!split) {
+            return contents;
+        }
+
+        return contents.split('\n').map(s => s.trim());
     }
 
-    readInputFile(filename) {
-        return this.readFileLines(path.join(__dirname, '..', 'inputs', filename));
+    readInputFile(filename, split = true) {
+        return this.readFileLines(path.join(__dirname, '..', 'inputs', filename), split);
     }
 }
 
